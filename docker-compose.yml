@@ -1,0 +1,17 @@
+first:
+    image: registry.aliyuncs.com/liuq901/docker
+    net: "bridge"
+    ports: 
+        - "8000:8000"
+    environment: 
+        - "PORT=8000"
+
+second:
+    image: registry.aliyuncs.com/liuq901/docker
+    net: "bridge"
+    ports: 
+        - "8001:8001"
+    environment: 
+        - "PORT=8001"
+    links:
+        - first
